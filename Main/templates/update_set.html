@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Page content -->
+<div id="page-content">
+<!-- Validation Header -->
+<div class="content-header">
+    <div class="header-section">
+        <h1>
+            <i class="gi gi-warning_sign"></i>Form Validation<br><small>Tools for easy form validation and user assist!</small>
+        </h1>
+    </div>
+</div>
+<ul class="breadcrumb breadcrumb-top">
+    <li>Forms</li>
+    <li><a href="">Validation</a></li>
+</ul>
+<!-- END Validation Header -->
+
+<div class="row">
+
+    <div class="col-md-12">
+
+
+        <!-- Masked Inputs Block -->
+        <div class="block">
+            <!-- Masked Inputs Title -->
+            <div class="block-title">
+                <h4><strong>Masked</strong> Inputs</h4>
+            </div>
+            <!-- END Masked Inputs Title -->
+
+            <!-- Masked Inputs Content -->
+            <form action="{% url 'update_set_info' set_info.id %}" method="post" class="form-horizontal form-bordered">
+                    {% csrf_token %}
+                    
+                   
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="masked_taxid">所在区</label>
+                    <div class="col-md-6">
+                        <input type="text" id="set_area" name="set_area" class="form-control" value='{{set_info.area}}区' disabled='disabled'>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="masked_taxid">座位编号</label>
+                    <div class="col-md-6">
+                        <input type="text" id="set_no" name="set_no" class="form-control" value='{{set_info.set_no}}' disabled='disabled'>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="masked_phone">价格</label>
+                    <div class="col-md-6">
+                        <input type="text" id="set_price" name="set_price" class="form-control" value="{{set_info.price}}" disabled='disabled'>
+                    </div>
+                </div>
+                <div class="form-group">
+                        <label class="col-md-4 control-label" for="user_name">用户名</label>
+                        <div class="col-md-6">
+                            <input type="text" id="user_name" name="user_name" class="form-control">
+                        </div>
+                    </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="end_day">预定截止日</label>
+                    <div class="col-md-6">
+                        <input type="text" id="end_day" name="end_day" class="form-control" placeholder="dd/mm/yyyy">
+                    </div>
+                </div>             
+                <div class="form-group form-actions">
+                    <div class="col-md-8 col-md-offset-4">
+                        <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-ok"></i> Submit</button>
+                        <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
+                    </div>
+                </div>
+            </form>
+            <!-- END Masked Inputs Content -->
+        </div>
+        <!-- END Masked Inputs Block -->
+    </div>
+</div>
+</div>
+<!-- END Page Content -->
+{% endblock %}

@@ -1,0 +1,83 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+
+{% block content %}
+
+<!-- Page content -->
+<div id="page-content">
+<!-- Media Widgets Header -->
+<div class="content-header">
+    <div class="header-section">
+    <h1>
+        <i class="gi gi-film"></i>座位选择系统<br><small>请选择没有人使用的座位</small>
+    </h1>
+    </div>
+</div>
+<!-- END Media Widgets Header -->
+{% for area in area_list %}
+<h3 class="sub-header"><strong>{{area.name}}</strong> 区</h3>
+<div class="row">
+{% for set in set_list %} 
+    {% if set.area.name == area.name %}
+    <div class="col-sm-6 col-lg-3">
+        
+        <a href="{% if set.status %} javascript:void(0)
+        
+        {% else %} {% url 'set_info' set.id %} {% endif %}" class="widget widget-hover-effect4">
+            <div class="widget-simple 
+            {% if set.status %}
+            themed-background
+            {% else %}
+            themed-background-autumn {% endif %}">
+                <img src="{% static 'img/placeholders/avatars/avatar12.jpg' %}" alt="avatar" class="widget-image img-circle pull-left">
+                <h4 class="widget-content widget-content-light">
+                    {% if set.user != "" %}
+                    <strong>{{set.user}}</strong>
+                    <small>{{set.end_day}}</small>
+                    {% else %}
+                    <strong>可预定</strong>
+                    {% endif %}
+                </h4>
+            </div>
+            <div class="widget-extra">
+                <div class="row text-center">
+                    <div class="col-xs-4">
+                        <h3>
+                            <strong>{{set.area}}{{set.set_no}}</strong><br>
+                            <small>号座位</small>
+                        </h3>
+                    </div>
+                    <div class="col-xs-4">
+                        <h3>
+                            <strong>{{set.price}}</strong><br>
+                            <small>RMB</small>
+                        </h3>
+                    </div>
+                    <div class="col-xs-4">
+                        <h3>
+                            <strong>{{set.counts}}</strong><br>
+                            <small>次预约</small>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+    </div>
+    {% endif %}
+
+{% endfor%}
+</div>
+{% endfor %}
+
+
+
+</div>
+
+<!-- END Page Content -->
+{% endblock %}
+                
