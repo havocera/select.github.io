@@ -19,9 +19,7 @@ from Main.views import Index, set_info, update_set_info
 
 urlpatterns = [
 path('admin/', admin.site.urls),
-path('',Index,name = 'index'),
+path('',Index, name = 'index'),
 path('set_info/<int:set_id>',set_info,name ='set_info'),
 path('set_info/update/<int:set_id>',update_set_info,name = 'update_set_info'),
-
-
 ]

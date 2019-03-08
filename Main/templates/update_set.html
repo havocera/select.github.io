@@ -8,13 +8,13 @@
 <div class="content-header">
     <div class="header-section">
         <h1>
-            <i class="gi gi-warning_sign"></i>Form Validation<br><small>Tools for easy form validation and user assist!</small>
+            <i class="gi gi-warning_sign"></i>个人信息登记<br><small>个人信息一经修改不可更改!</small>
         </h1>
     </div>
 </div>
 <ul class="breadcrumb breadcrumb-top">
-    <li>Forms</li>
-    <li><a href="">Validation</a></li>
+    <li>个人信息</li>
+    <li><a href="">编辑</a></li>
 </ul>
 <!-- END Validation Header -->
 
@@ -27,7 +27,7 @@
         <div class="block">
             <!-- Masked Inputs Title -->
             <div class="block-title">
-                <h4><strong>Masked</strong> Inputs</h4>
+                <h4><strong>个人信息</strong> </h4>
             </div>
             <!-- END Masked Inputs Title -->
 
@@ -55,11 +55,23 @@
                     </div>
                 </div>
                 <div class="form-group">
-                        <label class="col-md-4 control-label" for="user_name">用户名</label>
+                        <label class="col-md-4 control-label" for="user_name">学生姓名</label>
                         <div class="col-md-6">
                             <input type="text" id="user_name" name="user_name" class="form-control">
                         </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="user_mobile">手机号</label>
+                    <div class="col-md-6">
+                        <input type="text" id="user_mobile" name="user_mobile" class="form-control">
                     </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="start_day">预定起始日</label>
+                    <div class="col-md-6">
+                        <input type="text" id="start_day" name="start_day" class="form-control" placeholder="dd/mm/yyyy">
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="end_day">预定截止日</label>
                     <div class="col-md-6">
@@ -68,8 +80,8 @@
                 </div>             
                 <div class="form-group form-actions">
                     <div class="col-md-8 col-md-offset-4">
-                        <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-ok"></i> Submit</button>
-                        <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
+                        <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-ok"></i> 确定</button>
+                        <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i>取消</button>
                     </div>
                 </div>
             </form>

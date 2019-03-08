@@ -21,8 +21,10 @@ class Set(models.Model):
     set_no = models.CharField(max_length = 20,verbose_name = '座位号')
     status = models.BooleanField(verbose_name= '预定状态')
     user = models.CharField(max_length = 50,verbose_name = '预定人',blank = True)
+    mobile = models.IntegerField(verbose_name='手机号')
     price = models.IntegerField(verbose_name='价格',default=100)
-    end_day = models.DateField(verbose_name= '结束时间',auto_now= True)
+    start_day = models.DateField(verbose_name= '开始时间',blank = False)
+    end_day = models.DateField(verbose_name= '结束时间',blank = False)
     counts = models.IntegerField(verbose_name= '预订次数',default= 0)
     order =models.IntegerField(default=0,verbose_name='优先级')
     class Meta:
